@@ -1,5 +1,19 @@
 var dataset = [ 5, 10, 15, 20, 25 ];
 
+var exampleInput = { "queues":[
+                        {
+                          "name": "name1",
+                          "occupancy": 5,
+                          "target-size": 10
+                        },
+                        {
+                          "queue-name": "name2",
+                          "occupancy": 7,
+                          "target-size": 12
+                        }
+                    ]
+                  }
+
 //d3.select("body").selectAll("div")
 //    .data(dataset)
 //    .enter()
