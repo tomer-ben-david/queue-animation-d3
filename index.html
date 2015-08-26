@@ -4,22 +4,23 @@
     <meta charset="utf-8">
     <title>D3 Test</title>
     <script type="text/javascript" src="d3.js"></script>
+
+    <style type="text/css">
+
+        div.bar {
+        display: inline-block;
+        width: 20px;
+        height: 75px;
+        background-color: teal;
+        }
+
+    </style>
 </head>
 <body>
-<script type="text/javascript">
-            // Your beautiful D3 code will go here
-            var svg = d3.select("body").append("svg");
-            var mySquare=svg.append("rect")
-  .attr("x",60)
-  .attr("y",60)
-  .attr("width",60)
-  .attr("height",60);
-
-mySquare
-  .transition()
-  .attr("x",320)
-  .duration(1000)
-  .delay(100);
-        </script>
+<div style="display: inline-block;
+            width: 20px;
+            height: 75px;
+            background-color: teal;"></div>
+<script type="text/javascript" src="d3-queue.js"></script>
 </body>
 </html>
