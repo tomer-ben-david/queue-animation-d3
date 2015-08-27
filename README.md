@@ -2,7 +2,7 @@
 
 ## Queue animated aspects
 
-1. input: `queue-size` output: `queue-size` number of squares; each square representing an item in the queue.
+Define param maxwaittime and each item in queue will have a color related to how close it is to the maxwaittime 1. input: `queue-size` output: `queue-size` number of squares; each square representing an item in the queue.
 
 Example input json 
 
