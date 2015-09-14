@@ -1,0 +1,6 @@
+#queue_viewer div {
+    width: 20px;
+    height: 20px;
+    background-color:darkorange;
+    position: absolute;
+}
