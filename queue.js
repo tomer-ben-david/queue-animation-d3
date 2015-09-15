@@ -1,5 +1,5 @@
 (function () {
-    function getQueues() {
+    function fetchNewQueueState() {
         return { "queues":
           [{
             "name": "Queue Name",
@@ -10,7 +10,7 @@
     }
     
     function updateQueue() {
-        var obj = getQueues();
+        var obj = fetchNewQueueState();
         if(!obj) {
             return;
         }
