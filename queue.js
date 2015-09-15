@@ -1,14 +1,5 @@
 (function () {
-    function fetchNewQueueState() {
-        return { "queues":
-          [{
-            "name": "Queue Name",
-            "occupancy": Math.floor(Math.random() * 10), // max 10 elements in queue
-            "target-size": 10
-          }]
-        }
-    }
-    
+
     function updateQueue() {
         var obj = fetchNewQueueState();
         if(!obj) {
@@ -31,6 +22,17 @@
         d.exit()
             .remove();
     }
+    
+    function fetchNewQueueState() {
+        return { "queues":
+          [{
+            "name": "Queue Name",
+            "occupancy": Math.floor(Math.random() * 10), // max 10 elements in queue
+            "target-size": 10
+          }]
+        }
+    }
+    
     
     setInterval(
         function () {
