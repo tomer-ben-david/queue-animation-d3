@@ -1,0 +1,18 @@
+{
+  "keynamevalue": {
+    "subkeyvalue-a": "1111",
+    "subkeyvalue-b": 2,
+    "subkeyvalue-c": 3
+  },
+  "queuedatavalue": {
+    "some other element": 454545,
+    "occupancydatavalue": {
+      "some other element": "fdkgfkjfkj",
+      "occupancyvalueval": 0
+    }
+  },
+  "targetqueuesizedatavalue": {
+    "some other element": 454545,
+    "targetqueuesizevalue": 5.0
+  }
+}
