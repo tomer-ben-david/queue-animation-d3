@@ -2,10 +2,33 @@
 <meta charset="utf-8">
 <head>
 	<script src="d3.js" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="queue.css">
+    <link rel="stylesheet" type="text/css" href="animation.css">
 </head>
 <body>
 <div id="queue_viewer"></div>
 
-<script type="text/javascript" src="queue.js"></script>
+<script type="text/javascript" src="conf.js"></script>
+<script type="text/javascript" src="parser.js"></script>
+<script type="text/javascript" src="jsonpath-0.8.0.js"></script>
+<script type="text/javascript" src="polling.js"></script>
+<script type="text/javascript" src="animation.js"></script>
+
+<script type="text/javascript">
+    function poll2animation(response) {
+        var queueState = parser.getQueueState(response);
+        var animatedState = animation.createNewQueueAnimatedState(queueState);
+        animation.updateQueueAnimation(animatedState);
+    }
+    
+    // initialize the response parser
+    parser.init(conf["queuedata-uri"],
+                conf["response-jsonpath"]["occupancy"],
+                conf["response-jsonpath"]["target-size"]);
+    
+    // initialize the polling mechanism
+    polling.init(conf["queuedata-uri"], conf["polling-interval-sec"] * 1000,
+                poll2animation);
+    
+    polling.start();
+</script>
 </body>
