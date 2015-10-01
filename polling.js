@@ -8,6 +8,16 @@ var polling = polling || (function () {
             _callback(response);
         }
         else {
+			if(error.status = 404) {
+				_callback({
+					"error": _url + " not found"
+				});
+			}
+			else {
+				_callback({
+					"error": error.response
+				});
+			}
             console.log(error);
         }
     }
