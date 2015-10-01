@@ -5,7 +5,10 @@
     <link rel="stylesheet" type="text/css" href="animation.css">
 </head>
 <body>
+<div id="queue_name"></div>
 <div id="queue_viewer"></div>
+<div id="queue_info"></div>
+<div id="queue_error"></div>
 
 <script type="text/javascript" src="conf.js"></script>
 <script type="text/javascript" src="parser.js"></script>
@@ -23,7 +26,8 @@
     // initialize the response parser
     parser.init(conf["queuedata-uri"],
                 conf["response-jsonpath"]["occupancy"],
-                conf["response-jsonpath"]["target-size"]);
+                conf["response-jsonpath"]["target-size"],
+				conf["response-jsonpath"]["keys"]);
     
     // initialize the polling mechanism
     polling.init(conf["queuedata-uri"], conf["polling-interval-sec"] * 1000,
