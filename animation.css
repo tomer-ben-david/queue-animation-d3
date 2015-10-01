@@ -1,3 +1,7 @@
+#queue_name {
+	font-style: oblique;
+}
+
 #queue_viewer div.filled {
     width: 30px;
     height: 30px;
@@ -12,4 +16,13 @@
     border-width: 5px;
 	border-color: darkorange;
     position: absolute;
+}
+
+#queue_info {
+	font-size:larget;
+	text-align: center;
+}
+
+#queue_error {
+	color: red;
 }
