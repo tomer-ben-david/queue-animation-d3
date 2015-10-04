@@ -1,5 +1,5 @@
 var conf = conf || {
-  "queuedata-uri": "test/response.json",	// the url to query in order to get queue data
+  "queuedata-uri": "https://rawgit.com/tomer-ben-david/queue-animation-d3/master/test/response.json",	// the url to query in order to get queue data
   "polling-interval-sec": "1", 				// the polling interval in seconds
   "response-jsonpath": {					// a list of json path expressions (jsonpath.js). These expressions are to be applied to the json response.
       "occupancy": "$.queuedatavalue.occupancydatavalue.occupancyvalueval",	// the json path to queue occupancy
