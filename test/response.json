@@ -1,7 +1,7 @@
 {
   "keynamevalue": {
-    "subkeyvalue-a": "name-part1",
-    "subkeyvalue-b": "name-part2",
+    "subkeyvalue-a": "queue-name",
+    "subkeyvalue-b": "queue-sub-category",
     "subkeyvalue-c": 3
   },
   "queuedatavalue": {
