@@ -37,7 +37,7 @@ var parser = parser || (function () {
             }
             
             // for testing
-            occupancy = Math.floor(Math.random() * targetQueueSize);
+            //occupancy = Math.floor(Math.random() * targetQueueSize);
             
 			if(_keys && _keys.length > 0) {
 				_queueName = "";
