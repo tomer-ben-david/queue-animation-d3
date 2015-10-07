@@ -2,6 +2,13 @@
 	font-style: oblique;
 }
 
+#queue_viewer {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	width: 100%;
+}
+
 #queue_viewer div.filled {
     width: 30px;
     height: 30px;
@@ -19,7 +26,7 @@
 }
 
 #queue_info {
-	font-size:larget;
+	font-size:larger;
 	text-align: center;
 }
 
