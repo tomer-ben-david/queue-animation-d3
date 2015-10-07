@@ -3,13 +3,15 @@ var parser = parser || (function () {
     var _jsonPathOccupancy = "";
     var _jsonPathTargetQueueSize = "";
     var _keys = [];
+	var _localTesting = "0";
 	
     return {
-        init: function(queueName, jsonPathOccupancy, jsonPathTargetQueueSize, keys) {
+        init: function(queueName, jsonPathOccupancy, jsonPathTargetQueueSize, keys, localTesting) {
             _queueName = queueName;
             _jsonPathOccupancy = jsonPathOccupancy;
             _jsonPathTargetQueueSize = jsonPathTargetQueueSize;
 			_keys = keys;
+			_localTesting = localTesting;
         },
 
         getQueueState: function (response) {
@@ -36,10 +38,11 @@ var parser = parser || (function () {
                 targetQueueSize = 0;
             }
             
-            // for testing
-            targetQueueSize = targetQueueSize + Math.floor(Math.random() * targetQueueSize);
-            occupancy = Math.floor(Math.random() * targetQueueSize);
-            
+            if(_localTesting == "1") {
+				targetQueueSize = targetQueueSize + Math.floor(Math.random() * targetQueueSize);
+				occupancy = Math.floor(Math.random() * targetQueueSize);
+            }
+			
 			if(_keys && _keys.length > 0) {
 				_queueName = "";
 				for(var i = 0, n = _keys.length; i < n; ++i) {
