@@ -3,6 +3,9 @@ var polling = polling || (function () {
     var _pollingInterval;
     var _callback;
     
+	var count = 0;
+	var intervaId;
+	
     function internalCallback(error, response) {
         if(!error || typeof(error) == "undefined") {
             _callback(response);
@@ -32,7 +35,7 @@ var polling = polling || (function () {
         start: function() {
             d3.json(_url, internalCallback);
 
-            setInterval(function() {
+            intervalId = setInterval(function() {
                             d3.json(_url, internalCallback);
                        },
                        _pollingInterval);
