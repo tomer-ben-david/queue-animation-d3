@@ -1,3 +1,4 @@
+// Q: correct? this is our way to create an object in javascript, we create a function named animatino, and if already defined (that's why we have the ||) then we do not recreate it again, so we have an objet animation which is actually a function and this has an internal function named updateQueueAnimation that we can call with an updated animationQueueState so that it can update the animation.
 var animation = animation || (function () {
     return {
         updateQueueAnimation: function(animationQueue) {
