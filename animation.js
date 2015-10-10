@@ -10,9 +10,11 @@ var animation = animation || (function () {
             var occupancy = animationQueue["occupancy"];
 			var target_size = animationQueue["target-size"];
 			
-			// 1 * - convert string to int.
-			// Q: what is this ".style("width").replace("px", ""))"
-			var viewer_width = 1 * (d3.select("#queue_viewer").style("width").replace("px", ""));
+			function extractDivWidth(divName) {
+				return 1 * (d3.select(divName).style("width").replace("px", "")); // * 1 convert to int, replace px so we don't have strings in number.
+			}
+
+            var viewer_width = extractDivWidth("#queue_viewer");
 			var slot_width = 30;	// the width of a square representing a slot
 			var slot_gap = 5;		// the gap between slots
 
