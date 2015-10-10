@@ -1,4 +1,4 @@
-// Q: correct? this is our way to create an object in javascript, we create a function named animatino, and if already defined (that's why we have the ||) then we do not recreate it again, so we have an objet animation which is actually a function and this has an internal function named updateQueueAnimation that we can call with an updated animationQueueState so that it can update the animation.
+// animation is like an object with private members it does not have currently any private members wihch internal functions can be aware of.
 var animation = animation || (function () {
     return {
         updateQueueAnimation: function(animationQueue) {
