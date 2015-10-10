@@ -10,7 +10,7 @@ var animation = animation || (function () {
             var occupancy = animationQueue["occupancy"];
 			var target_size = animationQueue["target-size"];
 			
-			// Q: why do we need "1 *"
+			// 1 * - convert string to int.
 			// Q: what is this ".style("width").replace("px", ""))"
 			var viewer_width = 1 * (d3.select("#queue_viewer").style("width").replace("px", ""));
 			var slot_width = 30;	// the width of a square representing a slot
