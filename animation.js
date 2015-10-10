@@ -21,6 +21,7 @@ var animation = animation || (function () {
 			// set the name of the queue
 			d3.select("#queue_name").text(animationQueue.name);
 
+			// computes left side of square - the square which is at the middle of the queue.
 			var queue_start_position = queue_viewer_width / 2 - ((slot_width + slot_gap) * target_size) / 2;
 
 			// draw the empty squares
