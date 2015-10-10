@@ -14,15 +14,18 @@ var animation = animation || (function () {
 				return 1 * (d3.select(divName).style("width").replace("px", "")); // * 1 convert to int, replace px so we don't have strings in number.
 			}
 
-            var viewer_width = extractDivWidth("#queue_viewer");
+            var queue_viewer_width = extractDivWidth("#queue_viewer");
 			var slot_width = 30;	// the width of a square representing a slot
 			var slot_gap = 5;		// the gap between slots
 
 			// set the name of the queue
 			d3.select("#queue_name").text(animationQueue.name);
-			
+
+			//  # # # # O O O O
+			// /\
+			// this is the start
 			// the left edge of the region occupied by the squares that form the queue
-			var start = viewer_width / 2 - ((slot_width + slot_gap) * target_size) / 2;
+			var queue_start_position = queue_viewer_width / 2 - ((slot_width + slot_gap) * target_size) / 2;
 
 			// draw the empty squares
 			var sel_empty = d3.select("#queue_viewer").selectAll("div.empty");
@@ -32,11 +35,11 @@ var animation = animation || (function () {
 				.append("div")
 				.attr("class", "empty")
 				.style("left", function(d) {
-									return (start + d * (slot_width + slot_gap)) + "px";
+									return (queue_start_position + d * (slot_width + slot_gap)) + "px";
 								});
 								
 			d_empty.style("left", function(d) {
-										return (start + d * (slot_width + slot_gap)) + "px";
+										return (queue_start_position + d * (slot_width + slot_gap)) + "px";
 									});
 			
 			d_empty.exit()
@@ -47,7 +50,7 @@ var animation = animation || (function () {
 			sel_filled
 				.transition()
 				.style("left", function(d, i) {
-									var newLeft = Math.floor(start + d * (slot_width + slot_gap));
+									var newLeft = Math.floor(queue_start_position + d * (slot_width + slot_gap));
 									console.log("current_occupancy < occupancy - selection: d=" + d + " i=" + i + " newLeft=" + newLeft);
 									return newLeft + "px";
 								});
@@ -83,7 +86,7 @@ var animation = animation || (function () {
 					.transition()
 					.delay(50)
 					.style("left", function(d, i) {
-										var newLeft = Math.floor(start + d * (slot_width + slot_gap));
+										var newLeft = Math.floor(queue_start_position + d * (slot_width + slot_gap));
 										return newLeft + "px";
 									});
 				
@@ -97,7 +100,7 @@ var animation = animation || (function () {
 					.transition()
 					.delay(250)
 					.style("left", function(d, i) {
-										var newLeft = Math.floor(start + d * (slot_width + slot_gap));
+										var newLeft = Math.floor(queue_start_position + d * (slot_width + slot_gap));
 										return newLeft + "px";
 									});
 
@@ -114,7 +117,7 @@ var animation = animation || (function () {
 					.transition()
 					.delay(50)
 					.style("left", function(d, i) {
-										return viewer_width + "px";
+										return queue_viewer_width + "px";
 									})
 					.remove();
 			}
