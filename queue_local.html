@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-	<script src="d3.js" charset="utf-8"></script>
+    <script src="d3.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="animation.css">
 </head>
 <body>
@@ -17,6 +17,11 @@
 <script type="text/javascript" src="animation.js"></script>
 
 <script type="text/javascript">
+	// handler called from the jsonp script
+	function queueAnimationJsonpCallback(data) {
+		poll2animation(data);
+	}
+	
     function poll2animation(response) {
         var queueState = parser.getQueueState(response);
         var animatedState = animation.createNewQueueAnimatedState(queueState);
@@ -31,8 +36,7 @@
 				conf["local-testing"]);
     
     // initialize the polling mechanism
-    polling.init(conf["queuedata-uri"], conf["polling-interval-sec"] * 1000,
-                poll2animation);
+    polling.init(conf["queuedata-uri"], conf["polling-interval-sec"] * 1000);
     
     polling.start();
 </script>
